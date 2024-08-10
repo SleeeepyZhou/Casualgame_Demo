@@ -1,0 +1,247 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh3ucmvoei1mj"]
+
+[ext_resource type="Script" path="res://games/Gobang/Game.gd" id="1_6q21v"]
+[ext_resource type="PackedScene" uid="uid://dyah0r3nn25pi" path="res://games/Gobang/Checkerboard.tscn" id="1_r2a8n"]
+
+[node name="Gobang" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Text" type="Label" parent="."]
+visible = false
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.686275)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Win"
+
+[node name="Restart" type="Button" parent="Text"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 85.0
+offset_bottom = 131.0
+text = "Restart"
+
+[node name="Game" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("1_6q21v")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Esc" type="Button" parent="Game"]
+layout_mode = 1
+offset_left = 200.0
+offset_top = -360.0
+offset_right = 293.0
+offset_bottom = -329.0
+text = "Back to list ->"
+
+[node name="A" type="Label" parent="Game"]
+layout_mode = 2
+offset_left = -200.0
+offset_top = -320.0
+offset_right = -140.0
+offset_bottom = -295.0
+text = "PlayerA"
+
+[node name="ColorRect" type="ColorRect" parent="Game/A"]
+layout_mode = 0
+offset_left = -60.0
+offset_right = -20.0
+offset_bottom = 40.0
+color = Color(0, 1, 0, 1)
+
+[node name="OKLabel" type="Label" parent="Game/A/ColorRect"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "OK"
+
+[node name="Label" type="Label" parent="Game/A"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 40.0
+offset_right = -20.0
+offset_bottom = 63.0
+text = "You"
+
+[node name="AButton" type="Button" parent="Game/A"]
+visible = false
+layout_mode = 0
+offset_left = -60.0
+offset_top = 40.0
+offset_right = -6.0
+offset_bottom = 71.0
+text = "Select"
+
+[node name="B" type="Label" parent="Game"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 140.0
+offset_top = -320.0
+offset_right = 200.0
+offset_bottom = -295.0
+grow_vertical = 2
+text = "PlayerB"
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="Game/B"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="OKLabel" type="Label" parent="Game/B/ColorRect"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "OK"
+
+[node name="Label" type="Label" parent="Game/B"]
+visible = false
+layout_mode = 0
+offset_left = 80.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 63.0
+text = "You"
+
+[node name="BButton" type="Button" parent="Game/B"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 40.0
+offset_right = 134.0
+offset_bottom = 71.0
+text = "Select"
+
+[node name="Disconnect" type="Button" parent="Game"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 190.0
+offset_right = 405.0
+offset_bottom = 225.0
+text = "Disconnect"
+
+[node name="ConnectState" type="Label" parent="Game/Disconnect"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 103.0
+offset_bottom = 75.0
+text = "Unconnected"
+vertical_alignment = 1
+
+[node name="Create" type="Button" parent="Game"]
+layout_mode = 0
+offset_left = -300.0
+offset_top = 230.0
+offset_right = -260.0
+offset_bottom = 265.0
+mouse_filter = 1
+text = "Create"
+
+[node name="Control" type="Control" parent="Game/Create"]
+visible = false
+anchors_preset = 0
+
+[node name="HostIP" type="LineEdit" parent="Game/Create/Control"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 140.0
+offset_bottom = 75.0
+text = "192.168.255.255"
+editable = false
+
+[node name="IPlist" type="HSlider" parent="Game/Create/Control/HostIP"]
+layout_mode = 2
+offset_top = 25.0
+offset_right = 140.0
+offset_bottom = 41.0
+max_value = 10.0
+rounded = true
+
+[node name="HostPort" type="SpinBox" parent="Game/Create/Control"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 70.0
+offset_bottom = 115.0
+min_value = 1024.0
+max_value = 49151.0
+value = 1024.0
+rounded = true
+
+[node name="CreateOK" type="Button" parent="Game/Create/Control"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 40.0
+offset_right = -5.0
+offset_bottom = 75.0
+text = "OK"
+
+[node name="Jion" type="Button" parent="Game"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 230.0
+offset_right = 300.0
+offset_bottom = 265.0
+mouse_filter = 1
+text = "Jion"
+
+[node name="Control" type="Control" parent="Game/Jion"]
+visible = false
+anchors_preset = 0
+
+[node name="JionIP" type="LineEdit" parent="Game/Jion/Control"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 140.0
+offset_bottom = 75.0
+
+[node name="JionPort" type="SpinBox" parent="Game/Jion/Control"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 67.063
+offset_bottom = 115.0
+min_value = 1024.0
+max_value = 49151.0
+value = 1024.0
+rounded = true
+
+[node name="JionOK" type="Button" parent="Game/Jion/Control"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 40.0
+offset_right = -5.0
+offset_bottom = 75.0
+text = "OK"
+
+[node name="Timer" type="Timer" parent="Game"]
+wait_time = 15.0
+
+[node name="Checkerboard" parent="Game" instance=ExtResource("1_r2a8n")]
+position = Vector2(-25, -25)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[connection signal="button_up" from="Text/Restart" to="Game" method="_on_restart_button_up"]
+[connection signal="button_up" from="Game/Esc" to="Game" method="_on_esc_button_up"]
+[connection signal="pressed" from="Game/A/AButton" to="Game" method="_on_a_button_pressed"]
+[connection signal="pressed" from="Game/B/BButton" to="Game" method="_on_b_button_pressed"]
+[connection signal="pressed" from="Game/Disconnect" to="Game" method="_on_disconnect_pressed"]
+[connection signal="pressed" from="Game/Create" to="Game" method="_on_create_pressed"]
+[connection signal="value_changed" from="Game/Create/Control/HostIP/IPlist" to="Game" method="_on_iplist_value_changed"]
+[connection signal="pressed" from="Game/Create/Control/CreateOK" to="Game" method="_on_create_ok_pressed"]
+[connection signal="pressed" from="Game/Jion" to="Game" method="_on_jion_pressed"]
+[connection signal="pressed" from="Game/Jion/Control/JionOK" to="Game" method="_on_jion_ok_pressed"]

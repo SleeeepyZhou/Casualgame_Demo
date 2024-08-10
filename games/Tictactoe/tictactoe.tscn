@@ -1,0 +1,202 @@
+[gd_scene load_steps=3 format=3 uid="uid://boegllj163rf6"]
+
+[ext_resource type="PackedScene" uid="uid://dlbttdwdmsmib" path="res://games/Tictactoe/board.tscn" id="1_sqmbp"]
+[ext_resource type="Script" path="res://games/Tictactoe/Tictactoe.gd" id="1_xh8ff"]
+
+[node name="Center" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Text" type="Label" parent="."]
+visible = false
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.686275)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Win"
+
+[node name="Restart" type="Button" parent="Text"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 85.0
+offset_bottom = 131.0
+text = "Restart"
+
+[node name="Tictactoe" type="Control" parent="."]
+layout_mode = 2
+script = ExtResource("1_xh8ff")
+
+[node name="Esc" type="Button" parent="Tictactoe"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = -300.0
+offset_right = 261.0
+offset_bottom = -269.0
+text = "Back to list ->"
+
+[node name="A" type="Label" parent="Tictactoe"]
+layout_mode = 0
+offset_left = -115.0
+offset_top = -170.0
+offset_right = -55.0
+offset_bottom = -147.0
+text = "PlayerA"
+
+[node name="Label" type="Label" parent="Tictactoe/A"]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = -7.0
+text = "You"
+
+[node name="AButton" type="Button" parent="Tictactoe/A"]
+visible = false
+layout_mode = 0
+offset_top = -70.0
+offset_right = 55.0
+offset_bottom = -35.0
+text = "Select"
+
+[node name="B" type="Label" parent="Tictactoe"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -170.0
+offset_right = 110.0
+offset_bottom = -147.0
+text = "PlayerB"
+
+[node name="Label" type="Label" parent="Tictactoe/B"]
+visible = false
+layout_mode = 0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = -7.0
+text = "You"
+
+[node name="BButton" type="Button" parent="Tictactoe/B"]
+layout_mode = 0
+offset_top = -70.0
+offset_right = 55.0
+offset_bottom = -35.0
+text = "Select"
+
+[node name="Disconnect" type="Button" parent="Tictactoe"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 230.0
+offset_right = 45.0
+offset_bottom = 265.0
+text = "Disconnect"
+
+[node name="ConnectState" type="Label" parent="Tictactoe/Disconnect"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 103.0
+offset_bottom = 75.0
+text = "Unconnected"
+vertical_alignment = 1
+
+[node name="Create" type="Button" parent="Tictactoe"]
+layout_mode = 0
+offset_left = -185.0
+offset_top = 130.0
+offset_right = -125.0
+offset_bottom = 165.0
+mouse_filter = 1
+text = "Create"
+
+[node name="Control" type="Control" parent="Tictactoe/Create"]
+visible = false
+anchors_preset = 0
+
+[node name="HostIP" type="LineEdit" parent="Tictactoe/Create/Control"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 140.0
+offset_bottom = 75.0
+text = "192.168.255.255"
+editable = false
+
+[node name="IPlist" type="HSlider" parent="Tictactoe/Create/Control/HostIP"]
+layout_mode = 2
+offset_top = 25.0
+offset_right = 140.0
+offset_bottom = 41.0
+max_value = 10.0
+rounded = true
+
+[node name="HostPort" type="SpinBox" parent="Tictactoe/Create/Control"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 70.0
+offset_bottom = 115.0
+min_value = 1024.0
+max_value = 49151.0
+value = 1024.0
+rounded = true
+
+[node name="CreateOK" type="Button" parent="Tictactoe/Create/Control"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 40.0
+offset_right = -5.0
+offset_bottom = 75.0
+text = "OK"
+
+[node name="Jion" type="Button" parent="Tictactoe"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 130.0
+offset_right = 165.0
+offset_bottom = 165.0
+mouse_filter = 1
+text = "Jion"
+
+[node name="Control" type="Control" parent="Tictactoe/Jion"]
+visible = false
+anchors_preset = 0
+
+[node name="JionIP" type="LineEdit" parent="Tictactoe/Jion/Control"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 140.0
+offset_bottom = 75.0
+
+[node name="JionPort" type="SpinBox" parent="Tictactoe/Jion/Control"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 67.063
+offset_bottom = 115.0
+min_value = 1024.0
+max_value = 49151.0
+value = 1024.0
+rounded = true
+
+[node name="JionOK" type="Button" parent="Tictactoe/Jion/Control"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 40.0
+offset_right = -5.0
+offset_bottom = 75.0
+text = "OK"
+
+[node name="Board" parent="Tictactoe" instance=ExtResource("1_sqmbp")]
+position = Vector2(-40, -40)
+
+[connection signal="button_up" from="Text/Restart" to="Tictactoe" method="_on_restart_button_up"]
+[connection signal="button_up" from="Tictactoe/Esc" to="Tictactoe" method="_on_esc_button_up"]
+[connection signal="pressed" from="Tictactoe/A/AButton" to="Tictactoe" method="_on_a_button_pressed"]
+[connection signal="pressed" from="Tictactoe/B/BButton" to="Tictactoe" method="_on_b_button_pressed"]
+[connection signal="button_up" from="Tictactoe/Disconnect" to="Tictactoe" method="_on_disconnect_button_up"]
+[connection signal="pressed" from="Tictactoe/Create" to="Tictactoe" method="_on_create_pressed"]
+[connection signal="value_changed" from="Tictactoe/Create/Control/HostIP/IPlist" to="Tictactoe" method="_on_iplist_value_changed"]
+[connection signal="pressed" from="Tictactoe/Create/Control/CreateOK" to="Tictactoe" method="_on_create_ok_pressed"]
+[connection signal="pressed" from="Tictactoe/Jion" to="Tictactoe" method="_on_jion_pressed"]
+[connection signal="pressed" from="Tictactoe/Jion/Control/JionOK" to="Tictactoe" method="_on_jion_ok_pressed"]

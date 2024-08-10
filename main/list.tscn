@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://qogw8cc0t3hc"]
+
+[ext_resource type="Script" path="res://main/list.gd" id="1_2ogrs"]
+[ext_resource type="Texture2D" uid="uid://coey1bghmeg2f" path="res://icon.svg" id="1_7b404"]
+
+[node name="List" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ogrs")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_7b404")
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "占位
+音效：小霸王其乐无穷"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Tetris" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "我罗斯方块"
+
+[node name="Tictactoe" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "丼字棋"
+
+[node name="Gobang" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "伍仔棋"
+
+[node name="Moto" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "赛车"
+
+[node name="Esc" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back to Menu ->"
+
+[connection signal="button_up" from="CenterContainer/VBoxContainer/Tetris" to="." method="_on_tetris_button_up"]
+[connection signal="button_up" from="CenterContainer/VBoxContainer/Tictactoe" to="." method="_on_tictactoe_button_up"]
+[connection signal="button_up" from="CenterContainer/VBoxContainer/Gobang" to="." method="_on_gobang_button_up"]
+[connection signal="button_up" from="CenterContainer/VBoxContainer/Moto" to="." method="_on_moto_button_up"]
+[connection signal="button_up" from="CenterContainer/VBoxContainer/Esc" to="." method="_on_esc_button_up"]

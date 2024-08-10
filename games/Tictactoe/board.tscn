@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlbttdwdmsmib"]
+
+[ext_resource type="Texture2D" uid="uid://dm00y6m0vli27" path="res://games/Tictactoe/player.png" id="1_46pn7"]
+[ext_resource type="Script" path="res://games/Tictactoe/board.gd" id="1_qpxj6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4d7gr"]
+texture = ExtResource("1_46pn7")
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/1 = 1
+0:0/6 = 6
+0:0/6/modulate = Color(1, 0, 0, 1)
+0:0/7 = 7
+0:0/7/modulate = Color(0, 0.380392, 1, 1)
+0:1/next_alternative_id = 3
+0:1/0 = 0
+0:1/4 = 4
+0:1/4/modulate = Color(1, 0, 0, 1)
+0:1/5 = 5
+0:1/5/modulate = Color(0, 0.380392, 1, 1)
+0:2/next_alternative_id = 4
+0:2/0 = 0
+0:2/2 = 2
+0:2/2/modulate = Color(1, 0, 0, 1)
+0:2/3 = 3
+0:2/3/modulate = Color(0, 0.380392, 1, 1)
+
+[sub_resource type="TileSet" id="TileSet_nnk4l"]
+sources/0 = SubResource("TileSetAtlasSource_4d7gr")
+
+[node name="Board" type="TileMap"]
+scale = Vector2(5, 5)
+tile_set = SubResource("TileSet_nnk4l")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 0, 65536, -65536, 0, 65536, -65535, 0, 65536, 1, 0, 65536, 0, 0, 65536, 65535, 0, 65536, 131071, 0, 65536, 65536, 0, 65536, 65537, 0, 65536, -2, 0, 393216, -3, 0, 393216, -4, 0, 393216, 65534, 0, 262145, 65533, 0, 262145, 65532, 0, 262145, 131070, 0, 131074, 131069, 0, 131074, 131068, 0, 131074, -65534, 0, 458752, -65533, 0, 458752, -65532, 0, 458752, 65538, 0, 196610, 65539, 0, 196610, 65540, 0, 196610, 2, 0, 327681, 3, 0, 327681, 4, 0, 327681)
+script = ExtResource("1_qpxj6")
