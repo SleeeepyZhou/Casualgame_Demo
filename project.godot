@@ -14,7 +14,7 @@ config/name="Casualgame"
 config/tags=PackedStringArray("godot2024")
 run/main_scene="res://main/mainmenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://games/Tetris/block/player.png"
 
 [display]
 
