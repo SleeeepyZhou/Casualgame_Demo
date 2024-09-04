@@ -135,10 +135,3 @@ func _ready():
 		test_arr.append(interval)
 	test_arr.remove_at(0)
 	test_arr.remove_at(0)
-
-func _process(delta):
-	pass
-
-
-
-
