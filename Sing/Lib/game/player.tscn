@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlfv7jp8jrly0"]
+
+[ext_resource type="Script" path="res://Lib/game/player.gd" id="1_gnvs2"]
+[ext_resource type="Texture2D" uid="uid://oxc5pqr1tfwj" path="res://Res/bird.png" id="2_lcyrx"]
+[ext_resource type="PackedScene" uid="uid://dnaiucnflv5ec" path="res://Lib/AudioTest.tscn" id="3_ehfg3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nmtim"]
+radius = 13.0
+height = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5usek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lcyrx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+floor_snap_length = 0.0
+script = ExtResource("1_gnvs2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nmtim")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5usek")
+
+[node name="AudioTest" parent="." instance=ExtResource("3_ehfg3")]
+
+[node name="VisibleEnable" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Box" type="Node2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleEnable" to="." method="_on_out_screen"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

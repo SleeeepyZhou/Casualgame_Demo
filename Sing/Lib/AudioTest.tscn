@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnaiucnflv5ec"]
+
+[ext_resource type="Script" path="res://Lib/AudioTest.gd" id="1_oaksg"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_ca7yi"]
+
+[node name="AudioTest" type="Node"]
+script = ExtResource("1_oaksg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_ca7yi")
+volume_db = 24.0
+autoplay = true
+bus = &"TestBus"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,122 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjuxe6j45gpa5"]
+
+[ext_resource type="Script" path="res://Lib/game/game.gd" id="1_boto6"]
+[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://Res/theme.tres" id="2_r7ye1"]
+[ext_resource type="Texture2D" uid="uid://c6fgp4w0sopok" path="res://Res/Background.png" id="3_is0v3"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_boto6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PipeBox" type="Node2D" parent="."]
+position = Vector2(100, 0)
+
+[node name="Menu" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_r7ye1")
+
+[node name="Box" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Menu/Box"]
+layout_mode = 2
+text = "Start"
+
+[node name="Song" type="OptionButton" parent="Menu/Box"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Menu/Box"]
+layout_mode = 2
+text = "Back"
+
+[node name="Game" type="VBoxContainer" parent="Menu"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu/Game"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "123123"
+
+[node name="Restart" type="Button" parent="Menu/Game"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OK"
+
+[node name="Pause" type="CenterContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_r7ye1")
+
+[node name="Box" type="VBoxContainer" parent="Pause"]
+process_mode = 2
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Pause/Box"]
+layout_mode = 2
+text = "Back to menu ->"
+
+[node name="Stop" type="Button" parent="Pause/Box"]
+layout_mode = 2
+text = "Stop"
+
+[node name="Pausebutton" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 513.0
+offset_top = -312.0
+offset_right = 568.0
+offset_bottom = -281.0
+theme = ExtResource("2_r7ye1")
+text = "Pause"
+
+[node name="Label" type="Label" parent="Pausebutton"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -4.0
+offset_right = -23.0
+offset_bottom = 19.0
+text = "Score"
+
+[node name="Score" type="Label" parent="Pausebutton"]
+layout_mode = 0
+offset_left = -64.0
+offset_top = 22.0
+offset_right = -24.0
+offset_bottom = 45.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Box" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(2.5, 2.5)
+motion_mirroring = Vector2(480, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("3_is0v3")
+
+[connection signal="pressed" from="Menu/Box/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Box/Song" to="." method="_on_song_pressed"]
+[connection signal="pressed" from="Menu/Box/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu/Game/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Pause/Box/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Pause/Box/Stop" to="." method="_on_stop_button"]
+[connection signal="button_down" from="Pausebutton" to="." method="_on_pausebutton_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
