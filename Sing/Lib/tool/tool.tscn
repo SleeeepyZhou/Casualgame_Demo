@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://iqa3vxt4diav"]
+[gd_scene load_steps=15 format=3 uid="uid://iqa3vxt4diav"]
 
 [ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://Res/theme.tres" id="1_8vx3p"]
 [ext_resource type="Script" path="res://Lib/tool/tool.gd" id="1_27slr"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dkt007vt8cfef" path="res://Lib/tool/Knock1.wav" id="6_lqqk0"]
 [ext_resource type="Texture2D" uid="uid://bbnk24w5u7ctu" path="res://Res/book1.jpg" id="7_l2jvx"]
 [ext_resource type="Texture2D" uid="uid://bonasrjv2p850" path="res://Res/paper01.jpg" id="8_2s5sl"]
+[ext_resource type="Texture2D" uid="uid://jdyl3fg1wnqj" path="res://Res/t.jpg" id="10_a050d"]
 
 [sub_resource type="Animation" id="Animation_3qtyv"]
 resource_name = "Knock"
@@ -233,6 +234,11 @@ text = "点击西瓜敲击，
 position = Vector2(162.272, 309.219)
 scale = Vector2(0.440376, 0.440376)
 texture = ExtResource("8_2s5sl")
+
+[node name="T" type="Sprite2D" parent="Tip/Box"]
+position = Vector2(874, 165)
+scale = Vector2(0.389681, 0.389681)
+texture = ExtResource("10_a050d")
 
 [node name="ButtonBox" type="HBoxContainer" parent="."]
 layout_mode = 0

@@ -27,6 +27,23 @@ layout_mode = 2
 layout_mode = 2
 text = "Start"
 
+[node name="Help" type="Button" parent="Menu/Box"]
+layout_mode = 2
+text = "Help"
+
+[node name="Tip" type="TextEdit" parent="Menu/Box/Help"]
+visible = false
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 0
+offset_left = 100.0
+offset_right = 420.0
+offset_bottom = 92.0
+text = "通过麦克风获取声音，利用音高控制鸟的飞行高度，躲避陷阱。可以自己制作csv表格来制谱设计关卡(音高(-6 C3至14 B5,C4调,无半音)，时值对，两列数据)。"
+editable = false
+selecting_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+
 [node name="Song" type="OptionButton" parent="Menu/Box"]
 layout_mode = 2
 
@@ -113,6 +130,7 @@ motion_mirroring = Vector2(480, 0)
 texture = ExtResource("3_is0v3")
 
 [connection signal="pressed" from="Menu/Box/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Box/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Menu/Box/Song" to="." method="_on_song_pressed"]
 [connection signal="pressed" from="Menu/Box/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu/Game/Restart" to="." method="_on_restart_pressed"]

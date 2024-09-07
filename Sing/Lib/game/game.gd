@@ -104,3 +104,6 @@ func _on_pausebutton_button_down():
 
 func _on_restart_pressed():
 	$Menu/Game.visible = false
+
+func _on_help_pressed():
+	$Menu/Box/Help/Tip.visible = !$Menu/Box/Help/Tip.visible
