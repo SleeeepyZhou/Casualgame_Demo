@@ -12,6 +12,13 @@ var list_block := []
 @onready var Pause_text = $"../../../Pause Label"
 @onready var creat_pos = $"../Pos".global_position
 
+@onready var tips = $"../../../../Control"
+func _on_help_mouse_entered():
+	tips.visible = true
+
+func _on_help_mouse_exited():
+	tips.visible = false
+
 # 生成打乱
 func block_rand() -> Array:
 	var queue = BLOCK_TYPES.duplicate()
@@ -135,3 +142,4 @@ func _ready():
 		test_arr.append(interval)
 	test_arr.remove_at(0)
 	test_arr.remove_at(0)
+

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://qogw8cc0t3hc"]
+[gd_scene load_steps=6 format=3 uid="uid://qogw8cc0t3hc"]
 
 [ext_resource type="Script" path="res://main/list.gd" id="1_2ogrs"]
-[ext_resource type="Texture2D" uid="uid://coey1bghmeg2f" path="res://icon.svg" id="1_7b404"]
+[ext_resource type="Theme" uid="uid://ccwbw021k1wht" path="res://main/theme.tres" id="1_bnr6v"]
+[ext_resource type="Texture2D" uid="uid://bncfpun483d0o" path="res://main/cl.png" id="2_s0i7v"]
+[ext_resource type="AudioStream" uid="uid://cmd4rjrfkb4f6" path="res://main/xbw.mp3" id="3_qw2co"]
+[ext_resource type="Texture2D" uid="uid://dhv8okg7xv6hj" path="res://main/Icon_atlas.tres" id="5_1bu7l"]
 
 [node name="List" type="Control"]
 layout_mode = 3
@@ -10,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_bnr6v")
 script = ExtResource("1_2ogrs")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -20,32 +24,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+color = Color(0.0470588, 0.0588235, 0.0470588, 1)
+
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("1_7b404")
+texture = ExtResource("2_s0i7v")
 
-[node name="Label" type="Label" parent="CenterContainer/TextureRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "占位
-音效：小霸王其乐无穷"
+[node name="Audio" type="AudioStreamPlayer" parent="CenterContainer/TextureRect"]
+stream = ExtResource("3_qw2co")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
 [node name="Tetris" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "我罗斯方块"
 
 [node name="Tictactoe" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "丼字棋"
 
 [node name="Gobang" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "伍仔棋"
+theme_override_font_sizes/font_size = 30
+text = "伍兹棋"
 
 [node name="Moto" type="Button" parent="CenterContainer/VBoxContainer"]
 visible = false
@@ -55,6 +63,7 @@ text = "赛车"
 [node name="Esc" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Back to Menu ->"
+icon = ExtResource("5_1bu7l")
 
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Tetris" to="." method="_on_tetris_button_up"]
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Tictactoe" to="." method="_on_tictactoe_button_up"]

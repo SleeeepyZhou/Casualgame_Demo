@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ccwbw021k1wht"]
+
+[ext_resource type="FontFile" uid="uid://sul2rom3crqg" path="res://main/fusion-pixel-10px-monospaced-zh_hans.woff2" id="1_5lngk"]
+
+[resource]
+default_font = ExtResource("1_5lngk")
+default_font_size = 25

@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh3ucmvoei1mj"]
+[gd_scene load_steps=9 format=3 uid="uid://bh3ucmvoei1mj"]
 
+[ext_resource type="Theme" uid="uid://ccwbw021k1wht" path="res://main/theme.tres" id="1_0haaa"]
 [ext_resource type="Script" path="res://games/Gobang/Game.gd" id="1_6q21v"]
 [ext_resource type="PackedScene" uid="uid://dyah0r3nn25pi" path="res://games/Gobang/Checkerboard.tscn" id="1_r2a8n"]
+[ext_resource type="Texture2D" uid="uid://dhv8okg7xv6hj" path="res://main/Icon_atlas.tres" id="3_nd1oq"]
+[ext_resource type="Texture2D" uid="uid://ceost0yvb51sc" path="res://main/browse-ui-icons.png" id="4_korm4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbxxp"]
+atlas = ExtResource("4_korm4")
+region = Rect2(520, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klhuj"]
+atlas = ExtResource("4_korm4")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmvup"]
+atlas = ExtResource("4_korm4")
+region = Rect2(100, 0, 20, 20)
 
 [node name="Gobang" type="CenterContainer"]
 anchors_preset = 15
@@ -9,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_0haaa")
 metadata/_edit_lock_ = true
 
 [node name="Text" type="Label" parent="."]
@@ -36,6 +52,27 @@ script = ExtResource("1_6q21v")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
+[node name="Help" type="LinkButton" parent="Game"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = -319.0
+offset_right = 425.0
+offset_bottom = -279.0
+text = "Help"
+
+[node name="Label" type="Label" parent="Game/Help"]
+visible = false
+layout_mode = 0
+offset_left = -53.0
+offset_top = 33.0
+offset_right = 197.0
+offset_bottom = 175.0
+text = "左键确认，等待对方
+同时落子，同时计分
+落在同处，落下一坑
+右键自子，六边顺转
+同时选转，禁转一回"
+
 [node name="Esc" type="Button" parent="Game"]
 layout_mode = 1
 offset_left = 200.0
@@ -43,6 +80,7 @@ offset_top = -360.0
 offset_right = 293.0
 offset_bottom = -329.0
 text = "Back to list ->"
+icon = ExtResource("3_nd1oq")
 
 [node name="A" type="Label" parent="Game"]
 layout_mode = 2
@@ -98,8 +136,8 @@ horizontal_alignment = 2
 
 [node name="ColorRect" type="ColorRect" parent="Game/B"]
 layout_mode = 0
-offset_left = 80.0
-offset_right = 120.0
+offset_left = 125.0
+offset_right = 165.0
 offset_bottom = 40.0
 color = Color(1, 0, 0, 1)
 
@@ -130,10 +168,11 @@ text = "Select"
 [node name="Disconnect" type="Button" parent="Game"]
 layout_mode = 0
 offset_left = 310.0
-offset_top = 190.0
-offset_right = 405.0
-offset_bottom = 225.0
+offset_top = 145.0
+offset_right = 448.0
+offset_bottom = 180.0
 text = "Disconnect"
+icon = SubResource("AtlasTexture_cbxxp")
 
 [node name="ConnectState" type="Label" parent="Game/Disconnect"]
 layout_mode = 0
@@ -145,12 +184,13 @@ vertical_alignment = 1
 
 [node name="Create" type="Button" parent="Game"]
 layout_mode = 0
-offset_left = -300.0
+offset_left = -325.0
 offset_top = 230.0
-offset_right = -260.0
+offset_right = -215.0
 offset_bottom = 265.0
 mouse_filter = 1
 text = "Create"
+icon = SubResource("AtlasTexture_klhuj")
 
 [node name="Control" type="Control" parent="Game/Create"]
 visible = false
@@ -198,6 +238,7 @@ offset_right = 300.0
 offset_bottom = 265.0
 mouse_filter = 1
 text = "Jion"
+icon = SubResource("AtlasTexture_bmvup")
 
 [node name="Control" type="Control" parent="Game/Jion"]
 visible = false
@@ -236,6 +277,8 @@ scale = Vector2(0.5, 0.5)
 metadata/_edit_lock_ = true
 
 [connection signal="button_up" from="Text/Restart" to="Game" method="_on_restart_button_up"]
+[connection signal="mouse_entered" from="Game/Help" to="Game" method="_on_help_mouse_entered"]
+[connection signal="mouse_exited" from="Game/Help" to="Game" method="_on_help_mouse_exited"]
 [connection signal="button_up" from="Game/Esc" to="Game" method="_on_esc_button_up"]
 [connection signal="pressed" from="Game/A/AButton" to="Game" method="_on_a_button_pressed"]
 [connection signal="pressed" from="Game/B/BButton" to="Game" method="_on_b_button_pressed"]

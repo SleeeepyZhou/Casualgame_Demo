@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://bpqekx1v3xkmt"]
+[gd_scene load_steps=34 format=3 uid="uid://bpqekx1v3xkmt"]
 
+[ext_resource type="Theme" uid="uid://ccwbw021k1wht" path="res://main/theme.tres" id="1_dg2x0"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="1_mkbjv"]
-[ext_resource type="Texture2D" uid="uid://b6jyfooi2qoqw" path="res://games/Tetris/block/player.png" id="1_t8hpr"]
-[ext_resource type="Texture2D" uid="uid://cu8dlagxduhf6" path="res://games/Tetris/wall.png" id="2_0ejva"]
+[ext_resource type="Texture2D" uid="uid://i4wvhnappu3x" path="res://games/Tetris/block/player.png" id="1_t8hpr"]
+[ext_resource type="Texture2D" uid="uid://dtvlngioluw6p" path="res://games/Tetris/wall.png" id="2_0ejva"]
 [ext_resource type="Script" path="res://games/Tetris/Test.gd" id="4_6nlo1"]
 [ext_resource type="Script" path="res://games/Tetris/Block.gd" id="4_7mjns"]
 
@@ -211,6 +212,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("1_dg2x0")
 metadata/_edit_lock_ = true
 
 [node name="Game" type="CenterContainer" parent="."]
@@ -1288,6 +1290,11 @@ process_mode = 3
 layout_mode = 2
 text = "Pause"
 
+[node name="Help" type="LinkButton" parent="Game/Box/Data"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Help"
+
 [node name="Esc" type="Button" parent="Game/Box/Data"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1314,10 +1321,41 @@ offset_right = 23.0
 offset_bottom = 11.0
 text = "Pause"
 
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 32.0
+offset_right = 279.0
+offset_bottom = 64.0
+text = "DeadLine ->"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 288.0
+offset_right = 632.0
+offset_bottom = 400.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Drag and drop block with mouse"
+autowrap_mode = 3
+
 [connection signal="body_entered" from="Game/Box/Panel/End" to="Game/Box/Panel/End" method="_on_body_entered"]
 [connection signal="timeout" from="Game/Box/Panel/End/Timer" to="Game/Box/Panel/End" method="_on_timer_timeout"]
 [connection signal="timeout" from="Game/Box/Panel/Timer" to="Game/Box/Panel/Block" method="_on_timer_timeout"]
 [connection signal="timeout" from="Game/Box/Panel/take" to="Game/Box/Panel/Block" method="_on_take_timeout"]
 [connection signal="button_up" from="Game/Box/Data/Buttun/Start" to="Game/Box/Panel/Block" method="_on_start_button_up"]
 [connection signal="button_down" from="Game/Box/Data/Buttun/Pause" to="Game/Box/Panel/Block" method="_on_pause_button_down"]
+[connection signal="mouse_entered" from="Game/Box/Data/Help" to="Game/Box/Panel/Block" method="_on_help_mouse_entered"]
+[connection signal="mouse_exited" from="Game/Box/Data/Help" to="Game/Box/Panel/Block" method="_on_help_mouse_exited"]
 [connection signal="button_up" from="Game/Box/Data/Esc" to="Game/Box/Panel/Block" method="_on_esc_button_up"]

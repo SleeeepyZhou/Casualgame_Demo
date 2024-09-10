@@ -134,3 +134,9 @@ func restart():
 	othready = true
 	if iready:
 		started = true
+
+func _on_help_mouse_entered():
+	$Help/Label.visible = true
+
+func _on_help_mouse_exited():
+	$Help/Label.visible = false

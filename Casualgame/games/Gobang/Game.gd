@@ -161,7 +161,15 @@ func _on_b_button_pressed():
 	player_deci()
 
 func _on_esc_button_up():
+	_on_disconnect_pressed()
 	get_tree().change_scene_to_file("res://main/list.tscn")
 
 func _on_restart_button_up():
 	start(player)
+
+
+func _on_help_mouse_entered():
+	$Help/Label.visible = true
+
+func _on_help_mouse_exited():
+	$Help/Label.visible = false

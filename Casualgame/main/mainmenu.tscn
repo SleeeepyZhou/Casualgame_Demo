@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1ybglxewi2d4"]
+[gd_scene load_steps=9 format=3 uid="uid://c1ybglxewi2d4"]
 
+[ext_resource type="Theme" uid="uid://ccwbw021k1wht" path="res://main/theme.tres" id="1_1u34l"]
 [ext_resource type="Script" path="res://main/mainmenu.gd" id="1_ioqhn"]
 [ext_resource type="VideoStream" path="res://main/rickroll.ogv" id="2_itsgo"]
+[ext_resource type="Texture2D" uid="uid://djj3qjfjd5px0" path="res://main/clouds.jpg" id="2_ln5k1"]
+[ext_resource type="Texture2D" uid="uid://ceost0yvb51sc" path="res://main/browse-ui-icons.png" id="5_8r11o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2x8e"]
+atlas = ExtResource("5_8r11o")
+region = Rect2(560, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u21ud"]
+atlas = ExtResource("5_8r11o")
+region = Rect2(960, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpc7o"]
+atlas = ExtResource("5_8r11o")
+region = Rect2(40, 0, 20, 20)
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
@@ -10,7 +25,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1u34l")
 script = ExtResource("1_ioqhn")
+
+[node name="Clouds" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ln5k1")
+centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -26,20 +47,26 @@ alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Demo"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "小灞旺"
 horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "start"
+text = "Start"
+icon = SubResource("AtlasTexture_e2x8e")
 
 [node name="Setting" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "setting"
+icon = SubResource("AtlasTexture_u21ud")
 
 [node name="Esc" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "关机按钮"
+size_flags_horizontal = 4
+icon = SubResource("AtlasTexture_cpc7o")
+icon_alignment = 1
 
 [node name="Rickroll" type="VideoStreamPlayer" parent="CenterContainer"]
 visible = false

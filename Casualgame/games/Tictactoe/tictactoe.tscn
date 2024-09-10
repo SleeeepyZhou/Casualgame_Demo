@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://boegllj163rf6"]
+[gd_scene load_steps=4 format=3 uid="uid://boegllj163rf6"]
 
+[ext_resource type="Theme" uid="uid://ccwbw021k1wht" path="res://main/theme.tres" id="1_pdpdy"]
 [ext_resource type="PackedScene" uid="uid://dlbttdwdmsmib" path="res://games/Tictactoe/board.tscn" id="1_sqmbp"]
 [ext_resource type="Script" path="res://games/Tictactoe/Tictactoe.gd" id="1_xh8ff"]
 
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pdpdy")
 metadata/_edit_lock_ = true
 
 [node name="Text" type="Label" parent="."]
@@ -40,6 +42,25 @@ offset_top = -300.0
 offset_right = 261.0
 offset_bottom = -269.0
 text = "Back to list ->"
+
+[node name="Help" type="LinkButton" parent="Tictactoe"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = -261.0
+offset_right = 267.0
+offset_bottom = -221.0
+text = "Help"
+
+[node name="Label" type="Label" parent="Tictactoe/Help"]
+visible = false
+layout_mode = 0
+offset_left = -23.0
+offset_top = 33.0
+offset_right = 78.0
+offset_bottom = 59.0
+text = "□>▲>⚪
+⚪=1"
+horizontal_alignment = 1
 
 [node name="A" type="Label" parent="Tictactoe"]
 layout_mode = 0
@@ -192,6 +213,8 @@ position = Vector2(-40, -40)
 
 [connection signal="button_up" from="Text/Restart" to="Tictactoe" method="_on_restart_button_up"]
 [connection signal="button_up" from="Tictactoe/Esc" to="Tictactoe" method="_on_esc_button_up"]
+[connection signal="mouse_entered" from="Tictactoe/Help" to="Tictactoe" method="_on_help_mouse_entered"]
+[connection signal="mouse_exited" from="Tictactoe/Help" to="Tictactoe" method="_on_help_mouse_exited"]
 [connection signal="pressed" from="Tictactoe/A/AButton" to="Tictactoe" method="_on_a_button_pressed"]
 [connection signal="pressed" from="Tictactoe/B/BButton" to="Tictactoe" method="_on_b_button_pressed"]
 [connection signal="button_up" from="Tictactoe/Disconnect" to="Tictactoe" method="_on_disconnect_button_up"]

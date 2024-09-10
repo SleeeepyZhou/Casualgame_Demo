@@ -1,5 +1,11 @@
 extends Control
 
+func _ready():
+	$CenterContainer/TextureRect.visible = true
+	$CenterContainer/TextureRect/Audio.play()
+	await $CenterContainer/TextureRect/Audio.finished
+	$CenterContainer/TextureRect.visible = false
+
 func _on_tetris_button_up():
 	get_tree().change_scene_to_file("res://games/Tetris/tetris.tscn")
 
