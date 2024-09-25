@@ -1,8 +1,8 @@
 extends Control
 
-var knock : Array = [preload("res://Lib/tool/Knock1G.wav"), preload("res://Lib/tool/Knock2G.wav"),
-		preload("res://Lib/tool/Knock3.wav"), preload("res://Lib/tool/Knock1.wav"), 
-		preload("res://Lib/tool/Knock2.wav")]
+var knock : Array = [preload("res://games/Sing/Lib/tool/Knock1G.wav"), preload("res://games/Sing/Lib/tool/Knock2G.wav"),
+		preload("res://games/Sing/Lib/tool/Knock3.wav"), preload("res://games/Sing/Lib/tool/Knock1.wav"), 
+		preload("res://games/Sing/Lib/tool/Knock2.wav")]
 const GOOD = 1
 
 var score : int = 0:
@@ -36,8 +36,8 @@ func _on_watermelon_body_entered(body):
 var times : int = 0
 func _on_timer_timeout():
 	times = 0
-var broken_v = preload("res://Lib/tool/TM.wav")
-var broken_t = Image.load_from_file("res://Res/watermelon(broken).png")
+var broken_v = preload("res://games/Sing/Lib/tool/TM.wav")
+var broken_t = Image.load_from_file("res://games/Sing/Res/watermelon(broken).png")
 var broken := false:
 	set(b):
 		broken = b
@@ -92,4 +92,4 @@ func _on_tip_mouse_exited():
 	$Tip/Box.visible = false
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://games/Sing/main.tscn")

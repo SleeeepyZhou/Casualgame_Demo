@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cobc64kcd68de"]
 
-[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://Res/theme.tres" id="1_at16b"]
-[ext_resource type="Script" path="res://Lib/game/note.gd" id="1_idtpr"]
+[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://games/Sing/Res/theme.tres" id="1_at16b"]
+[ext_resource type="Script" path="res://games/Sing/Lib/game/note.gd" id="1_idtpr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_khyp5"]
 radius = 4.0

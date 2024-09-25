@@ -34,7 +34,7 @@ func _on_out_screen():
 	queue_free()
 
 func _on_timer_timeout():
-	var note_res = load("res://Lib/game/note.tscn")
+	var note_res = load("res://games/Sing/Lib/game/note.tscn")
 	if hi[1] > 40.0:
 		var note = note_res.instantiate()
 		note.position.y -= 30

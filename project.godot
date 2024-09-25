@@ -16,6 +16,14 @@ run/main_scene="res://main/mainmenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://games/Tetris/block/player.png"
 
+[audio]
+
+buses/default_bus_layout="res://main/bus_layout.tres"
+
+[autoload]
+
+Readcsv="*res://games/Sing/Lib/Readcsv.gd"
+
 [display]
 
 window/size/viewport_width=1280

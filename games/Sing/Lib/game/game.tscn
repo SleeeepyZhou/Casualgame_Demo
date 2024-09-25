@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjuxe6j45gpa5"]
 
-[ext_resource type="Script" path="res://Lib/game/game.gd" id="1_boto6"]
-[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://Res/theme.tres" id="2_r7ye1"]
-[ext_resource type="Texture2D" uid="uid://c6fgp4w0sopok" path="res://Res/Background.png" id="3_is0v3"]
+[ext_resource type="Script" path="res://games/Sing/Lib/game/game.gd" id="1_boto6"]
+[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://games/Sing/Res/theme.tres" id="2_r7ye1"]
+[ext_resource type="Texture2D" uid="uid://5ax2g1oqh17y" path="res://games/Sing/Res/Background.png" id="3_is0v3"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_boto6")
@@ -123,7 +123,7 @@ offset_bottom = 45.0
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3, 3)
 motion_mirroring = Vector2(480, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]

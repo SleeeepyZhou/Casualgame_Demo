@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cui6wyffih8ck"]
 
-[ext_resource type="Texture2D" uid="uid://6tvyfcxmuog6" path="res://Res/pipe.png" id="1_3l2j4"]
-[ext_resource type="Script" path="res://Lib/game/obstacle.gd" id="1_ufuo6"]
-[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://Res/theme.tres" id="3_dfhdf"]
+[ext_resource type="Texture2D" uid="uid://csj5mffaq8s61" path="res://games/Sing/Res/pipe.png" id="1_3l2j4"]
+[ext_resource type="Script" path="res://games/Sing/Lib/game/obstacle.gd" id="1_ufuo6"]
+[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://games/Sing/Res/theme.tres" id="3_dfhdf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lspfb"]
 friction = 0.0

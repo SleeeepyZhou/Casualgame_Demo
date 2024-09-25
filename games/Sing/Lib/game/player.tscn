@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlfv7jp8jrly0"]
 
-[ext_resource type="Script" path="res://Lib/game/player.gd" id="1_gnvs2"]
-[ext_resource type="Texture2D" uid="uid://oxc5pqr1tfwj" path="res://Res/bird.png" id="2_lcyrx"]
-[ext_resource type="PackedScene" uid="uid://dnaiucnflv5ec" path="res://Lib/AudioTest.tscn" id="3_ehfg3"]
+[ext_resource type="Script" path="res://games/Sing/Lib/game/player.gd" id="1_gnvs2"]
+[ext_resource type="Texture2D" uid="uid://utxofnjxqh4e" path="res://games/Sing/Res/bird.png" id="2_lcyrx"]
+[ext_resource type="PackedScene" uid="uid://dnaiucnflv5ec" path="res://games/Sing/Lib/AudioTest.tscn" id="3_ehfg3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nmtim"]
 radius = 13.0

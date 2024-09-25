@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://byopcoqeq0hav"]
 
-[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://Res/theme.tres" id="1_hlx00"]
-[ext_resource type="Script" path="res://Lib/main.gd" id="1_sdlw1"]
-[ext_resource type="Texture2D" uid="uid://c6fgp4w0sopok" path="res://Res/Background.png" id="3_tcyel"]
-[ext_resource type="Texture2D" uid="uid://oxc5pqr1tfwj" path="res://Res/bird.png" id="4_rvwhk"]
-[ext_resource type="Texture2D" uid="uid://c231u3ql1meap" path="res://Res/watermelon.png" id="5_5677j"]
+[ext_resource type="Theme" uid="uid://l1m56un8kvw6" path="res://games/Sing/Res/theme.tres" id="1_hlx00"]
+[ext_resource type="Script" path="res://games/Sing/Lib/main.gd" id="1_sdlw1"]
+[ext_resource type="Texture2D" uid="uid://5ax2g1oqh17y" path="res://games/Sing/Res/Background.png" id="3_tcyel"]
+[ext_resource type="Texture2D" uid="uid://utxofnjxqh4e" path="res://games/Sing/Res/bird.png" id="4_rvwhk"]
+[ext_resource type="Texture2D" uid="uid://dretnkomsmbha" path="res://games/Sing/Res/watermelon.png" id="5_5677j"]
 
 [node name="Menu" type="CenterContainer"]
 anchors_preset = 15
@@ -17,7 +17,7 @@ script = ExtResource("1_sdlw1")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(2.40441, 2.40441)
+scale = Vector2(3, 3)
 texture = ExtResource("3_tcyel")
 centered = false
 

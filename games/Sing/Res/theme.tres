@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://l1m56un8kvw6"]
+
+[ext_resource type="FontFile" uid="uid://sul2rom3crqg" path="res://main/fusion-pixel-10px-monospaced-zh_hans.woff2" id="1_p6pb0"]
+
+[resource]
+default_font = ExtResource("1_p6pb0")

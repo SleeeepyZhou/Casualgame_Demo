@@ -33,7 +33,7 @@ func sing():
 		if get_tree().paused:
 			while get_tree().paused:
 				await get_tree().create_timer(0.5).timeout
-		var pipe_sec = load("res://Lib/game/obstacle.tscn")
+		var pipe_sec = load("res://games/Sing/Lib/game/obstacle.tscn")
 		var pipe = pipe_sec.instantiate()
 		$PipeBox.add_child(pipe)
 		pipe.screat = data
@@ -65,7 +65,7 @@ func _on_song_pressed():
 
 func _on_start_pressed():
 	song_data = Readcsv.parse_csv_file($Menu/Box/Song.text)
-	player = load("res://Lib/game/player.tscn").instantiate()
+	player = load("res://games/Sing/Lib/game/player.tscn").instantiate()
 	add_child(player)
 	player.gameover.connect(game_over)
 	move_child(player,0)
@@ -88,7 +88,7 @@ func _on_stop_button():
 
 func _on_back_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://games/Sing/main.tscn")
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_APPLICATION_FOCUS_OUT:

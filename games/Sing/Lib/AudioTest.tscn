@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnaiucnflv5ec"]
 
-[ext_resource type="Script" path="res://Lib/AudioTest.gd" id="1_oaksg"]
+[ext_resource type="Script" path="res://games/Sing/Lib/AudioTest.gd" id="1_oaksg"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_ca7yi"]
 
@@ -11,7 +11,7 @@ script = ExtResource("1_oaksg")
 stream = SubResource("AudioStreamMicrophone_ca7yi")
 volume_db = 24.0
 autoplay = true
-bus = &"TestBus"
+bus = &"Analy"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05

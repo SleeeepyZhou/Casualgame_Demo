@@ -55,6 +55,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "伍兹棋"
 
+[node name="Sing" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sing Dui to Die"
+
 [node name="Moto" type="Button" parent="CenterContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -68,5 +72,6 @@ icon = ExtResource("5_1bu7l")
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Tetris" to="." method="_on_tetris_button_up"]
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Tictactoe" to="." method="_on_tictactoe_button_up"]
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Gobang" to="." method="_on_gobang_button_up"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Sing" to="." method="_on_sing_pressed"]
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Moto" to="." method="_on_moto_button_up"]
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Esc" to="." method="_on_esc_button_up"]

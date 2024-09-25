@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btiqipuqeyi4h"]
 
-[ext_resource type="Texture2D" uid="uid://bvgpvhvbv0pn8" path="res://Res/Mallet.png" id="1"]
-[ext_resource type="Script" path="res://Lib/tool/Mallet.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b7uvmrq4tuetr" path="res://games/Sing/Res/Mallet.png" id="1"]
+[ext_resource type="Script" path="res://games/Sing/Lib/tool/Mallet.gd" id="2"]
 
 [node name="Mallet" type="CharacterBody2D"]
 script = ExtResource("2")

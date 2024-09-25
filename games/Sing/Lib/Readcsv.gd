@@ -13,7 +13,7 @@ const gamey = [300, 275, 250, 225, 200, 175, 150, 125, 100, 75, 50, 25,
 func parse_csv_file(path : String) -> Array:
 	var csv_path = (OS.get_executable_path().get_base_dir() + "/data/" + path + ".csv").simplify_path()
 	if path in "test":
-		csv_path = "res://Res/test.csv"
+		csv_path = "res://games/Sing/Res/test.csv"
 	var file = FileAccess.open(csv_path,FileAccess.READ)
 	if file:
 		var temp : PackedStringArray = file.get_csv_line()
